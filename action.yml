@@ -1,6 +1,6 @@
 ---
-name: 'Oblako Core image'
-description: 'Core deployment docker image for use with GitHub Actions'
+name: 'Oblako Core docker image'
+description: 'Uses with deployment GitHub Actions'
 
 runs:
   using: 'docker'
