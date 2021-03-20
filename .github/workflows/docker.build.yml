@@ -13,4 +13,5 @@ jobs:
     - name: Test query
       id: runtime
       run: |
-        echo $GITHUB_REF
+        TAGS=${GITHUB_REF}
+        echo ::set-output name=tags::${TAGS}
