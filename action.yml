@@ -1,0 +1,13 @@
+---
+name: 'Oblako Core image'
+description: 'Core deployment docker image for use with GitHub Actions'
+inputs:
+  yc-config-path:
+    description: 'internal path to Yandex Cloud config'
+    required: true
+    default: '/root/.config/yandex-cloud'
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
+  args:
+    - ${{ inputs.yc-config-path }}

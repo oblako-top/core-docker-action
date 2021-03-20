@@ -1,0 +1,54 @@
+---
+tariffs:
+  hdd:
+    - name: "ferrum"
+      id: 2554
+      cost: 200
+      vcpu:
+        id: 2564
+        default: 1
+        cost: 100
+      ram:
+        id: 2558
+        default: 1
+        cost: 100
+      disk:
+        id: 2555
+        default: 20
+        cost: 5
+      ipv4:
+        id: 2557
+        default: 1
+        cost: 90
+      ipv6:
+        id: 2567
+        default: 4
+        cost: 1
+      ns:
+        id: 2566
+  ssd:
+    - name: "ferrum"
+      id: 2540
+      cost: 250
+      vcpu:
+        id: 2550
+        default: 1
+        cost: 100
+      ram:
+        id: 2544
+        default: 1
+        cost: 100
+      disk:
+        id: 2541
+        default: 20
+        cost: 5
+      ipv4:
+        id: 2543
+        default: 1
+        cost: 90
+      ipv6:
+        id: 2553
+        default: 4
+        cost: 1
+      ns:
+        id: 2552

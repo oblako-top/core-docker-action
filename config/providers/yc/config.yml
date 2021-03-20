@@ -1,0 +1,7 @@
+current: core
+profiles:
+  core:
+    token: AgAEA7qixz2HAATuwVGQnftqPEsbj3PyMn7iwe0
+    cloud-id: b1g1m32tf7mi6325098c
+    folder-id: b1gaietmb907aq33e1ji
+    compute-default-zone: ru-central1-a
