@@ -2,12 +2,8 @@ name: "Build Core image"
 
 on:
   push:
-<<<<<<< HEAD
     branches: [ master ]
-=======
-    branches: [ main ]
->>>>>>> 6228956dd5c5515cbc523bc069eea2d5e51d4ca4
-
+    
 jobs:
   build:
     runs-on: ubuntu-latest
