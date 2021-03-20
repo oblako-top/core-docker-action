@@ -28,7 +28,7 @@ jobs:
         context: ./
         file: ./Dockerfile
         push: true
-        tags: garryoldman/core-bootstrap-docker:latest
+        tags: ${{ secrets.DOCKER_HUB_USERNAME }}/core-bootstrap-docker:${{ github.sha }}
 
     - name: Image digest
       run: echo ${{ steps.docker_build.outputs.digest }}
