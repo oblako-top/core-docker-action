@@ -3,7 +3,6 @@ FROM alpine:${INPUT_ALPINE_VERSION}
 
 ARG INPUT_YC_VERSION=0.73.0
 ARG INPUT_YC_BIN=/bin/yc
-ARG INPUT_YC_CONF=config/providers/yc/config.tmpl
 
 ARG WORKDIR="/core"
 WORKDIR ${WORKDIR}
