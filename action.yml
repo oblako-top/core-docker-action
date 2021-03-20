@@ -7,10 +7,6 @@ inputs:
     description: 'Alpine image version'
     required: true
     default: "3.13.2"
-  python_version:
-    description: 'Python interpreter version'
-    required: false
-    default: "38"
   yc_version:
     description: 'YandexCloud CLI version'
     required: true
@@ -47,8 +43,18 @@ inputs:
     required: true
     default: "./config/providers/ihor/tariffs.example.yml"
 
-
-
 runs:
   using: 'docker'
   image: 'Dockerfile'
+  args:
+    - ${{ inputs.alpine_version }}
+    - ${{ inputs.yc_version }}
+    - ${{ inputs.yc_bin }}
+    - ${{ inputs.yc_conf }}
+    - ${{ inputs.yc_cloud_id }}
+    - ${{ inputs.yc_folder_id }}
+    - ${{ inputs.yc_token }}
+    - ${{ inputs.yc_datacenter }}
+    - ${{ inputs.ihor_login }}
+    - ${{ inputs.ihor_pass }}
+    - ${{ inputs.ihor_price_list }}
