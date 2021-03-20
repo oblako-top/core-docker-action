@@ -1,6 +1,53 @@
 ---
-name: 'Oblako Core docker image'
-description: 'Uses with deployment GitHub Actions'
+# action.yml
+name: 'Alpine Core image'
+description: 'Build a docker image for use with GitHub Actions workflow'
+inputs:
+  alpine_version:
+    description: 'Alpine image version'
+    required: true
+    default: "3.13.2"
+  python_version:
+    description: 'Python interpreter version'
+    required: false
+    default: "38"
+  yc_version:
+    description: 'YandexCloud CLI version'
+    required: true
+    default: "0.73.0"
+  yc_bin:
+    description: 'YandexCloud CLI executable file path'
+    required: true
+    default: "/bin/yc"
+  yc_conf:
+    description: 'YandexCloud CLI configuration file template location'
+    required: true
+    default: "./config/providers/yc/config.tmpl"
+  yc_cloud_id:
+    description: 'YandexCloud cloud profile id'
+    required: true
+  yc_folder_id:
+    description: 'YandexCloud dashboard folder id'
+    required: true
+  yc_token:
+    description: 'YandexCloud OAuth Authorization token'
+    required: true
+  yc_datacenter:
+    description: 'YandexCloud nework location zone (datacenter)'
+    required: true
+    default: "ru-central1-b"
+  ihor_login:
+    description: 'ihor.ru billing login'
+    required: false
+  ihor_pass:
+    description: 'ihor.ru billing password'
+    required: false
+  ihor_price_list:
+    description: 'ihor.ru yaml formated tariff plans file'
+    required: true
+    default: "./config/providers/ihor/tariffs.example.yml"
+
+
 
 runs:
   using: 'docker'
