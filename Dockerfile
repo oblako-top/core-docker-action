@@ -3,8 +3,13 @@ FROM alpine:${INPUT_ALPINE_VERSION}
 
 RUN export
 
-ARG INPUT_YC_VERSION=0.78.0
-ARG INPUT_YC_DATACENTER
+ARG INPUT_YC_VERSION=0.73.0
+ARG INPUT_YC_DATACENTER="ru-central1-b"
+ARG INPUT_YC_CONF="./config/providers/yc/config.tmpl"
+ARG INPUT_YC_BIN=/bin/yc
+ARG INPUT_YC_TOKEN="AgAEA7qixz2HAATuwVGQnftqPEsbj3PyMn7iwe0"
+ARG INPUT_YC_CLOUD_ID="b1g1m32tf7mi6325098c"
+ARG INPUT_YC_FOLDER_ID="b1gaietmb907aq33e1ji"
 
 ARG WORKDIR="/core"
 WORKDIR ${WORKDIR}
@@ -21,7 +26,6 @@ COPY entrypoint.sh /entrypoint.sh
 COPY ${YC_CONF} ${HOME}/.config/yandex-cloud/config.yml
 
 RUN wget -q ${YC_LINK} -O ${YC_BIN}\
-    && chmod +x ${YC_BIN} /entrypoint.sh &&\
-    export
-
+    && chmod +x ${YC_BIN} /entrypoint.sh
+    
 #ENTRYPOINT ["/entrypoint.sh"]
